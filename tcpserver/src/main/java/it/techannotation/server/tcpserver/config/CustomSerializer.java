@@ -1,16 +1,13 @@
 package it.techannotation.server.tcpserver.config;
 
 import org.springframework.integration.ip.tcp.serializer.ByteArrayCrLfSerializer;
-import org.springframework.integration.ip.tcp.serializer.ByteArrayStxEtxSerializer;
 import org.springframework.integration.ip.tcp.serializer.SoftEndOfStreamException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 
-public class AimSerializer extends ByteArrayCrLfSerializer {
+public class CustomSerializer extends ByteArrayCrLfSerializer {
 
 	@Override
 	public int fillToCrLf(InputStream inputStream, byte[] buffer) throws IOException {

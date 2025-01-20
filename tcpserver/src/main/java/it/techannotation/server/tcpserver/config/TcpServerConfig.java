@@ -32,7 +32,7 @@ public class TcpServerConfig {
 	@Bean
 	public AbstractServerConnectionFactory serverFactory() {
 		AbstractServerConnectionFactory factory = new TcpNetServerConnectionFactory(serverPort);
-		AimSerializer serializer = new AimSerializer();
+		CustomSerializer serializer = new CustomSerializer();
 		serializer.setMaxMessageSize(1048576); // 1MB
 		factory.setSoTimeout(60_000);
 		factory.setSerializer(serializer);
