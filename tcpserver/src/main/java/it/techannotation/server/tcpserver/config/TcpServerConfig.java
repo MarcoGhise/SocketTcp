@@ -34,10 +34,10 @@ public class TcpServerConfig {
 		AbstractServerConnectionFactory factory = new TcpNetServerConnectionFactory(serverPort);
 		CustomSerializer serializer = new CustomSerializer();
 		serializer.setMaxMessageSize(1048576); // 1MB
-		factory.setSoTimeout(60_000);
 		factory.setSerializer(serializer);
 		factory.setDeserializer(serializer);
 		factory.setSingleUse(false);
+//		factory.setSoTimeout(80_000); //Server hang up after 80 seconds
 
 		return factory;
 	}

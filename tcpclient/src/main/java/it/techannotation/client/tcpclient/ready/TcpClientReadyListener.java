@@ -20,7 +20,7 @@ public class TcpClientReadyListener {
 
 	@EventListener(ApplicationReadyEvent.class)
 	public void start() throws InterruptedException {
-		for (int i = 0; i < 2000; i++) {
+		for (int i = 0; i < 3; i++) {
 			Thread.sleep(50);
 			String payload = "prov" + i;
 			if (i>9)
@@ -29,8 +29,9 @@ public class TcpClientReadyListener {
 			log.info("Sending ... {}", payload);
 
 			byte[] response = tcpClientGateway.send(payload.getBytes());
-
 			log.info(new String(response, StandardCharsets.UTF_8));
+
+//			Thread.sleep(30_000);
 		}
 	}
 

@@ -29,6 +29,6 @@ public class TcpServerInboundEndpoint {
 //			return ResultEnum.ERROR.name().getBytes();
 //		}
 
-		return payloadString.getBytes();
+		return (payloadString + " OK").getBytes();
 	}
 }

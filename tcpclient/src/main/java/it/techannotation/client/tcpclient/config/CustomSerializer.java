@@ -15,7 +15,7 @@ public class CustomSerializer extends ByteArrayCrLfSerializer {
 	 */
 	@Override
 	public int fillToCrLf(InputStream inputStream, byte[] buffer) throws IOException {
-		int bucketSize = 5;
+		int bucketSize = 8;
 		int n = 0;
 		int bite;
 		int available = inputStream.available();

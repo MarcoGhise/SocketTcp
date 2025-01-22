@@ -28,7 +28,7 @@ public class TcpClientConfig {
 		factory.setSerializer(serde);
 		factory.setDeserializer(serde);
 		factory.setSingleUse(false);
-
+		factory.setSoTimeout(80_000); //Client hang up after 80 seconds
 		return factory;
 	}
 
@@ -39,7 +39,6 @@ public class TcpClientConfig {
 		outboundGateway.setConnectionFactory(clientFactory);
 		outboundGateway.setLoggingEnabled(true);
 		outboundGateway.setRequiresReply(true);
-
 		return outboundGateway;
 	}
 
